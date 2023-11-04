@@ -35,6 +35,8 @@ const Preference = (props) => {
     .then((res)=>{
       console.log(res.data.msg)
       props.showDash()
+      
+      
     })
     .catch((err)=>{
       console.log("error in saving colors -> ",err)
