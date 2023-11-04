@@ -20,7 +20,7 @@ const Preference = (props) => {
    
   const showcolors = ()=>{
 
-    axios.post('http://localhost:5000/colors',{
+    axios.post('https://ui-j89c.onrender.com/colors',{
       textColor : text,
       buttonbackgroundColor: back,
       headerBackgroundColor: headbg,

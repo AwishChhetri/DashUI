@@ -14,7 +14,7 @@ const Login = () => {
 
   const handleLogin = () => {
     axios
-      .post("http://localhost:5000/login", {
+      .post("https://ui-j89c.onrender.com/login", {
         email: email,
         password: password,
       })

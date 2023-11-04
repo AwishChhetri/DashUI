@@ -28,7 +28,7 @@ const HeroPage = () => {
   const [theme3,setTheme3] = useState('')
 
   useEffect(()=>{
-    axios.get(`http://localhost:5000/user/${id}`)
+    axios.get(`https://ui-j89c.onrender.com/user/${id}`)
     .then((res)=>{
       setMail(res.data.email)
       setName(res.data.username)

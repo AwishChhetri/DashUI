@@ -12,7 +12,7 @@ const SignUp = () => {
 
   const Register = ()=>{
     axios.post(
-      'http://localhost:5000/register',
+      'https://ui-j89c.onrender.com/register',
       {
         username : username,
         email : email,
