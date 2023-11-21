@@ -11,8 +11,42 @@ const SignUp = () => {
   const navigate=useNavigate();
 
   const Register = ()=>{
+    const regex = /^(vtu\d{5}@veltech\.edu\.in|[^.]+@(gmail\.com|yahoo\.com|hotmail\.com))$/
+    const regex2 = /^(?!.*(\w)\1{2,})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{6,}$/
+    if(username==='' || email==='' || password==='')
+    {
+      Swal.fire({
+        icon: 'warning',
+        title: '🫥',
+        text: 'Fill all the fields',
+      })
+      return
+    }
+    if(!regex.test(email))
+    {
+      Swal.fire({
+        icon: 'warning',
+        title: '🤔',
+        text: 'Invalid Email',
+      })
+      return
+    }
+
+    if(!regex2.test(password))
+      {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Password Alert☹️',
+          text: `
+          Minimum length: 6 characters (must include at least one uppercase letter, one lowercase letter, one special character, one number)`,
+        })
+        return
+      }
+   
+   
+    
     axios.post(
-      'https://ui-j89c.onrender.com/register',
+      'http://localhost:5000/register',
       {
         username : username,
         email : email,

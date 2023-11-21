@@ -14,7 +14,7 @@ const Login = () => {
 
   const handleLogin = () => {
     axios
-      .post("https://ui-j89c.onrender.com/login", {
+      .post("http://localhost:5000/login", {
         email: email,
         password: password,
       })
@@ -34,20 +34,12 @@ const Login = () => {
         }
       })
       .catch(err=>{
-        if(err.response.status==404)
+        if(err.response.status==404 || err.response.status===400)
         {
           Swal.fire({
             icon: 'error',
             title: 'OOPS!!!🫨',
             text: 'WRONG CREDENTIALS!',
-          })
-        }
-        else if(err.response.status==400)
-        {
-          Swal.fire({
-            icon: 'error',
-            title: '☹️',
-            text: 'WRONG PASSWORD!',
           })
         }
       })
