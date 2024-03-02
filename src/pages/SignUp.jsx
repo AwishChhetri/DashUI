@@ -46,7 +46,7 @@ const SignUp = () => {
    
     
     axios.post(
-      'https://server-fo-ui.onrender.com',
+      'https://server-fo-ui.onrender.com/register',
       {
         username : username,
         email : email,
